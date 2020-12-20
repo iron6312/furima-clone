@@ -29,7 +29,7 @@
 | method_of_shipment | string     | null: false                    |
 | ship_form          | string     | null: false                    |
 | day_to_ship        | string     | null: false                    |
-| user_id            | integer    | null: false, foreign_key: true |
+| user               | references | null: false, foreign_key: true |
 
 ## Association
 
@@ -54,10 +54,10 @@
 
 ## histories テーブル
 
-| Column          | Type    | Options                        |
-| --------------- | ------- | ------------------------------ |
-| user_id         | integer | null: false, foreign_key: true |
-| item_id         | integer | null: false, foreign_key: true |
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
 
 - has_one :order
 - belongs_to :item
